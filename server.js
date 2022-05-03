@@ -7,7 +7,7 @@ const app = express();
 app.set('port', process.env.PORT || 5000);
 
 // Routes
-app.use('./routes', require('./routes/index'));
+app.use(require('./routes/index'));
 
 // starting server
 
