@@ -3,19 +3,19 @@ const dbClient = require('../utils/db');
 
 class AppController {
   static getStatus(req, res) {
-    if (redisClient.isAlive() && dbClient.isAlive()) {
-      res.status(200).json({ redis: true, db: true }, 200);
-    }
+    const data = {
+      redis: redisClient.isAlive(),
+      db: dbClient.isAlive(),
+    };
+    return res.status(200).send(data)
   }
 
   static async getStats(req, res) {
-    const users = await dbClient.nbUsers();
-    const files = await dbClient.nbFiles();
-    const obj = {
-      users,
-      files,
+    const data = {
+       users: await dbClient.nbUsers();
+       files: await dbClient.nbFiles();
     };
-    res.status(200).json(obj);
+    return res.status(200).send(data);
   }
 }
 
