@@ -1,4 +1,5 @@
 const express = require('express');
+const router = require('./routes/index')
 
 // Initializer
 const app = express();
@@ -7,10 +8,12 @@ const app = express();
 app.set('port', process.env.PORT || 5000);
 
 // Routes
-app.use(require('./routes/index'));
+app.use(router);
 
 // starting server
 
 app.listen(app.get('port', () => {
   console.log('Server running on port', app.get('port'));
 }));
+
+export default app;
