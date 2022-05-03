@@ -8,6 +8,7 @@ const app = express();
 app.set('port', process.env.PORT || 5000);
 
 // Routes
+app.use(express.json());
 app.use(router);
 
 // starting server
