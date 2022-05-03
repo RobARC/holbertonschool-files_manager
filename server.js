@@ -5,7 +5,7 @@ const app = express();
 
 // Settings
 app.set('port', process.env.PORT || 5000);
-app.use(express.json());
+
 
 // Routes
 app.use(require('./routes/index'));
