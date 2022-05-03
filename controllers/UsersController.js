@@ -1,8 +1,7 @@
-import sha1 from 'sha1';
-import DBClient from '../utils/db';
-import RedisClient from '../utils/redis';
-
+const sha1 = require('sha1');
 const { ObjectId } = require('mongodb');
+const DBClient = require('../utils/db');
+const RedisClient = require('../utils/redis');
 
 class UsersController {
   static async postNew(request, response) {
