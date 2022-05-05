@@ -13,3 +13,5 @@ app.use(require('./routes/index'));
 app.listen(app.get('port', () => {
   console.log('Server running on port', app.get('port'));
 }));
+
+export default app;
